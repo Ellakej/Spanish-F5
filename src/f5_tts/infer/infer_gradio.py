@@ -507,7 +507,7 @@ with gr.Blocks() as app_chat:
             if chat_model_state is None:
                 show_info = gr.Info
                 show_info("Cargando modelo de chat...")
-                model_name = "deepseek-ai/DeepSeek-R1"
+                model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
                 chat_model_state = AutoModelForCausalLM.from_pretrained(
                     model_name, torch_dtype="auto", device_map="auto"
                 )
@@ -522,7 +522,7 @@ with gr.Blocks() as app_chat:
         chat_interface_container = gr.Column()
 
         if chat_model_state is None:
-            model_name = "deepseek-ai/DeepSeek-R1"
+            model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
             chat_model_state = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype="auto", device_map="auto")
             chat_tokenizer_state = AutoTokenizer.from_pretrained(model_name)
 
